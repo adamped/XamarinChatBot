@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ChatBot"
+             x:Class="ChatBot.App">
+	<Application.Resources>
+
+        <ResourceDictionary>
+            <DataTemplate x:Key="ClientTemplate">
+                <ViewCell>
+                    <StackLayout Padding="5" Margin="5" BackgroundColor="#4286f4" HorizontalOptions="End">
+                        <Label Text="{Binding Text}" HorizontalOptions="End" TextColor="White" />
+                        <Label Text="{Binding UserTime}" FontSize="Micro" HorizontalOptions="End" TextColor="White" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="ServerTemplate">
+                <ViewCell>
+                    <StackLayout Padding="5" Margin="5" BackgroundColor="#b9bfc9" HorizontalOptions="Start">
+                        <Label Text="{Binding Text}" HorizontalOptions="Start" />
+                        <Label Text="{Binding UserTime}" FontSize="Micro" HorizontalOptions="Start" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+
+            <local:ChatDataTemplateSelector x:Key="ChatDataTemplateSelector" 
+                                            ServerTemplate="{StaticResource ServerTemplate}" 
+                                            ClientTemplate="{StaticResource ClientTemplate}" />
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

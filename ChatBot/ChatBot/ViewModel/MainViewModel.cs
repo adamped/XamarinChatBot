@@ -15,12 +15,7 @@ namespace ChatBot.ViewModel
 
         public MainViewModel()
         {
-
             Messages = new ObservableCollection<Message>();
-            Messages.Add(new Message() { MessageType = MessageType.Sent, Text = "Hi", DateTime = DateTime.Now.AddSeconds(-15) });
-            Messages.Add(new Message() { MessageType = MessageType.Received, Text = "You sent Hi which was 2 characters", DateTime = DateTime.Now.AddSeconds(-14) });
-            Messages.Add(new Message() { MessageType = MessageType.Sent, Text = "Hi Again", DateTime = DateTime.Now.AddSeconds(-5) });
-            Messages.Add(new Message() { MessageType = MessageType.Received, Text = "You sent Hi Again which was 8 characters", DateTime = DateTime.Now.AddSeconds(-5) });
         }
 
         public ObservableCollection<Message> Messages { get; set; }
